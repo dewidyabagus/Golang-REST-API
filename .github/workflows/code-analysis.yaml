@@ -35,4 +35,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run OSV scanner
-        run: /osv-scanner --lockfile=/github/workspace/go.mod
+        run: /osv-scanner -r /github/workspace
