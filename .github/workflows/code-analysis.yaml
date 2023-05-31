@@ -35,7 +35,7 @@ jobs:
     container:
       image: ghcr.io/google/osv-scanner:latest
       volumes:
-        - ${{GITHUB_WORKSPACE}}:/github/workspace
+        - ${GITHUB_WORKSPACE}:/github/workspace
     steps:
       - uses: actions/checkout@v3
         with:
