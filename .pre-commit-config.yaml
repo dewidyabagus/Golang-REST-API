@@ -15,3 +15,18 @@ repos:
       pass_filenames: false
       entry: go mod tidy
       language: system
+    - id: unit-testing
+      name: Run unit tests
+      pass_filenames: false
+      entry: go test -race -vet=off -covermode=atomic -coverprofile=coverage.out ./...
+      language: system
+    - id: go-staticcheck
+      name: Run code analysis
+      pass_filenames: false
+      entry: staticcheck ./...
+      language: golang
+    - id: vuln-scanner
+      name: Run vulnerability scanning
+      pass_filenames: false
+      entry: osv-scanner --lockfile=go.mod
+      language: golang

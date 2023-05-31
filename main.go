@@ -16,8 +16,6 @@ import (
 	"gorm.io/gorm"
 )
 
-var requestTimeout = 30 * time.Second
-
 func main() {
 	config := LoadConfig()
 
@@ -68,11 +66,4 @@ func dummySimulation(e *echo.Echo, port string) {
 		params := c.QueryParams()
 		return c.JSON(http.StatusCreated, echo.Map{"destination": params, "message": "Transfer Berhasil"})
 	})
-}
-
-func copy(src []string, dst []string) {
-	// for _, val := range dst {
-	// 	src = append(src, val)
-	// }
-	src = append(src, dst...)
 }
