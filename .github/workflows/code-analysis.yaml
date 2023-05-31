@@ -33,7 +33,7 @@ jobs:
     container:
       image: ghcr.io/google/osv-scanner:latest
       volumes:
-        - /home/runner/work/Simple-RESt-API/Simple-RESt-API:/github/workspace
+        - ${{github.GITHUB_WORKSPACE}}:/github/workspace
     steps:
       - uses: actions/checkout@v3
         with:
